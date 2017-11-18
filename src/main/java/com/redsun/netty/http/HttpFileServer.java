@@ -14,7 +14,7 @@ import io.netty.handler.stream.ChunkedWriteHandler;
 
 public class HttpFileServer {
 
-    private static final String DEFAULT_URL = "/netty/src/main/java/com/redsun/netty";
+    private static final String DEFAULT_URL = "/src/main/java/com/redsun/netty";
 
     public void run(final int port, final String url) throws Exception {
         // 配置服务端NIO线程组
