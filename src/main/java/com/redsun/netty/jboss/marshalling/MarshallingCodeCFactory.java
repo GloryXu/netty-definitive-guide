@@ -4,6 +4,7 @@ import io.netty.handler.codec.marshalling.*;
 import org.jboss.marshalling.MarshallerFactory;
 import org.jboss.marshalling.Marshalling;
 import org.jboss.marshalling.MarshallingConfiguration;
+import org.jboss.marshalling.Unmarshaller;
 
 public class MarshallingCodeCFactory {
 
@@ -25,5 +26,9 @@ public class MarshallingCodeCFactory {
         MarshallingEncoder encoder = new MarshallingEncoder(provider);
 
         return encoder;
+    }
+
+    public static Unmarshaller buildUnMarshalling() {
+        return  null;
     }
 }
