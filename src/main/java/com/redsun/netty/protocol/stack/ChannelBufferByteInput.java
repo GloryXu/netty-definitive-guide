@@ -2,12 +2,14 @@ package com.redsun.netty.protocol.stack;
 
 import io.netty.buffer.ByteBuf;
 import org.jboss.marshalling.ByteInput;
+import org.jboss.marshalling.ByteOutput;
 
 import java.io.IOException;
 
-public class ChannelBufferByteOutput implements ByteInput {
+public class ChannelBufferByteInput implements ByteInput {
 
-    public ChannelBufferByteOutput(ByteBuf buf) {
+    public ChannelBufferByteInput(ByteBuf buf) {
+
     }
 
     @Override

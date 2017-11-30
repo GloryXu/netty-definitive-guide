@@ -1,10 +1,7 @@
 package com.redsun.netty.jboss.marshalling;
 
 import io.netty.handler.codec.marshalling.*;
-import org.jboss.marshalling.MarshallerFactory;
-import org.jboss.marshalling.Marshalling;
-import org.jboss.marshalling.MarshallingConfiguration;
-import org.jboss.marshalling.Unmarshaller;
+import org.jboss.marshalling.*;
 
 public class MarshallingCodeCFactory {
 
@@ -30,5 +27,9 @@ public class MarshallingCodeCFactory {
 
     public static Unmarshaller buildUnMarshalling() {
         return  null;
+    }
+
+    public static Marshaller buildMarshalling() {
+        return null;
     }
 }

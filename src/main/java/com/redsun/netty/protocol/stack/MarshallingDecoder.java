@@ -18,7 +18,7 @@ public class MarshallingDecoder {
     protected Object decode(ByteBuf in) throws Exception {
         int objectSize = in.readInt();
         ByteBuf buf = in.slice(in.readerIndex(), objectSize);
-        ByteInput input = new ChannelBufferByteOutput(buf);
+        ByteInput input = new ChannelBufferByteInput(buf);
         try{
             unmarshaller.start(input);
             Object obj = unmarshaller.readObject();
