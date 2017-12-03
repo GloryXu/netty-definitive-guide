@@ -19,7 +19,7 @@ public class MarshallingEncoder {
         try {
             int lengthPos = out.writerIndex();
             out.writeBytes(LENGTH_PLACEHOLDER);
-            ChannelBufferByteInput output = new ChannelBufferByteInput(out);
+            ChannelBufferByteOutput output = new ChannelBufferByteOutput(out);
             marshaller.start(output);
             marshaller.writeObject(msg);
             marshaller.finish();

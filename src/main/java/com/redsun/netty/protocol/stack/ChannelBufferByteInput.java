@@ -8,8 +8,10 @@ import java.io.IOException;
 
 public class ChannelBufferByteInput implements ByteInput {
 
-    public ChannelBufferByteInput(ByteBuf buf) {
+    ByteBuf byteBuf;
 
+    public ChannelBufferByteInput(ByteBuf out) {
+        this.byteBuf = out;
     }
 
     @Override
