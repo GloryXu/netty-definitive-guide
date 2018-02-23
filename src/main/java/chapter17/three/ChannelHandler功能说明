@@ -1,0 +1,5 @@
+基于ChannelHandler接口，用户可以方便地进行业务逻辑定制，例如打印日志、统一封装异常信息、性能统计和消息编解码
+
+ChannelHandler支持注解
+Sharable：多个ChannelPipeline公用同一个ChannelHandler
+Skip：被Skip注解的方法不会被调用，直接被忽略

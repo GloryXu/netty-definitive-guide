@@ -1,0 +1,5 @@
+MessageToMessageDecoder实际上是Netty的二次解码器，它的职责是将一个对象二次解码为其他对象
+
+为什么称它为二次解码器？从SocketChannel读取到的TCP数据包是ByteBuffer，我们先需要将ByteBuffer
+缓冲区中的数据包读取出来，并将其解码为Java对象；然后对Java对象根据某些规则做二次解码，将其解码
+为另一个POJO对象
