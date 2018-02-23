@@ -1,0 +1,26 @@
+JDK ByteBuffer的典型用法
+ByteBuffer buffer = ByteBuffer.allocate(88);
+String value = "Netty权威指南";
+buffer.put(value.getBytes());
+buffer.flip();
+byte[] vArray = new byte[buffer.remaining()];
+byffer.get(vArray);
+String decodeValue = new String(vArray);
+
+|---------Netty 权威指南-------|--------------------|
+|                              |                    |
+-----------------------------------------------------
+0                            position               capacity
+
+如果不作flip操作，读取到的将是position到capacity之前的错误内容
+
+|---------Netty 权威指南-------|--------------------|
+|                              |                    |
+-----------------------------------------------------
+position                    limit               capacity
+
+当执行flip()操作之后，它的limit被设置为position，position设置为0，capacity不变，
+由于读取的内容是从position到limit之前，因此，能够正确地读取到之前写入缓冲区的内容
+
+
+

@@ -1,0 +1,2 @@
+1.主要成员变量
+    leakDetector，ResourceLeakDetector用于检测对象是否泄漏

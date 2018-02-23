@@ -1,0 +1,13 @@
+ByteBuf如何实现动态扩展？
+
+对ByteBuffer进行put操作的时候，如果缓冲区剩余可写空间不够，就会发生BufferOverflowException
+异常。为了避免发生这个问题，通常在进行put操作的时候会对剩余可用空间进行校验，如果剩余
+空间不足，需要重新创建一个新的ByteBuffer，并将之前的ByteBuffer复制到新创建的ByteBuffer中，
+最后释放老的ByteBuffer
+if(this.buffer.remaining() < needSize) {
+    int toBeExtSize = need > 128 ? needSize : 128;
+    ByteBuffer tmpBuffer = ByteBuffer.allocate(this.buffer.capacity() + toBeExtSize);
+    this.buffer.flip();
+    tmpBuffer.put(this.buffer);
+    this.buffer = tmpBuffer;
+}

@@ -1,0 +1,5 @@
+pipeline中以fireXXX命名的方法都是从IO线程流向用户业务Handler的inbound事件，
+（1）调用HeadHandler对应的fireXXX方法
+（2）执行事件相关的逻辑操作
+以fireChannelActive方法为例，调用head.fireChannelActive()之后，判断当前的Channel配置
+是否自动读取，如果为真则调用Channel的read方法
